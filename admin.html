@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Admin login</title>
+	<style>
+	* {
+		margin: 0;
+		padding: 0;
+	}
+
+	ul, li {
+		list-style: none;
+	}
+
+	a {
+		text-decoration: none;
+		color: #000;
+	}
+
+	h2 {
+		padding: 10px 0;
+	}
+
+	.main {
+		width: 1200px;
+		height: 600px;
+		margin: 0 auto;
+		background-color: #dddddd;
+	}
+
+	#nav {
+        width: 160px;
+        float: left;
+        line-height: 30px;
+    }
+
+        #nav li {
+        	text-align: center;
+            padding-bottom: 1px;
+            background-color: #FFFFFF;
+            /*float: left;*/
+        }
+
+        #nav a {
+            background-color: #BFBFBF;
+            display: block;
+        }
+
+            #nav a:hover {
+                background-color: #FF9175;
+            }
+
+        #nav li ul {
+            padding-top: 1px;
+        }
+
+        #nav ul a {
+            background-color: #EBEBEB;
+        }
+
+    .cx {
+        display: none;
+        /*visibility: hidden;*/
+    }
+
+    .ex {
+        display: inherit;
+        /*visibility: inherit;*/
+    }
+
+    .content {
+    	width: 1000px;
+    	margin-left: 194px;
+    }
+	</style>
+</head>
+<body>
+	<div class="main">
+		<header>
+			<h2>租车管理系统 管理员欢迎登陆</h2>
+		</header>
+		<aside>
+			<div id="Parent">
+		        <ul id="nav">
+		            <li>
+		                <a href="javascript:void(0);" onclick="doMenu(this)"><h4>租车订单</h4></a>
+		                <ul>
+		                    <li><a href="order.html" target="admin">待审核</a></li>
+		                    <li><a href="order2.html" target="admin">进行中</a></li>
+		                    <li><a href="order1.html" target="admin">已完成</a></li>
+		                    <li><a href="javascript:void(0);">其他</a></li>
+		                </ul>
+		            </li>
+		            <li>
+		                <a href="javascript:void(0);" onclick="doMenu(this)"><h4>车辆信息</h4></a>
+		                <ul>
+		                    <li><a href="carlist1.html" target="admin">可租车辆</a></li>
+		                    <li><a href="javascript:void(0);">已租车辆</a></li>
+		                    <li><a href="javascript:void(0);">其他</a></li>
+		                </ul>
+		            </li>
+		            <li>
+		                <a href="javascript:void(0);" onclick="doMenu(this)"><h4>投诉查看</h4></a>
+		                <ul>
+		                    <li><a href="javascript:void(0);">所有投诉</a></li>
+		                    <li><a href="javascript:void(0);">已处理</a></li>
+		                    <li><a href="javascript:void(0);">未处理</a></li>
+		                </ul>
+		            </li>
+		            <li>
+		                <a href="javascript:void(0);" onclick="doMenu(this)"><h4>流水统计</h4></a>
+		                <ul>
+		                    <li><a href="javascript:void(0);">成交订单</a></li>
+		                    <li><a href="javascript:void(0);">盈利</a></li>
+		                </ul>
+		            </li>
+		        </ul>
+		    </div>
+		</aside>
+		<div class="content">
+			<iframe src="" frameborder="1" width="100%" height="500px" name="admin" scrolling="auto"></iframe>
+		</div>
+	</div>
+</body>
+<script type="text/javascript">
+// 折叠菜单导航
+function doMenu(obj) {
+    const items = obj.parentNode.getElementsByTagName("ul");
+    let itmUl;
+    if (items.length > 0) {
+        itmUl = items[0];
+    }
+    if (itmUl.className != "ex") {
+        cxAll();
+        itmUl.className = "ex";
+    } else {
+        itmUl.className = "cx";
+    }
+}
+
+function cxAll() {
+    const ulDom = document.getElementById("nav");
+    const items = ulDom.getElementsByTagName("ul");
+    for (let i = 0; i < items.length; i++) {
+        items[i].className = "cx";
+    }
+}
+cxAll();
+</script>
+</html>

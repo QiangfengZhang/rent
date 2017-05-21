@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>login</title>
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/carlist.css">
+    <link rel="stylesheet" href="./css/login.css">
+</head>
+<body>
+    <!-- 遮罩层 mask -->
+    <div id="mask"></div>
+    <div class="container" id="container">
+        <span id="close">关闭</span>
+        <h2>用户登录</h2>
+        <form action="" id="login">
+            <label for="GET-phoneNumber">账户:</label>
+            <input id="phoneNumber" type="text" name="phoneNumber" placeholder="手机号码"><br>
+            <label for="GET-password">密码:</label>
+            <input id="password" type="password" name="password" placeholder="123456"><br>
+            <input id="submitBtn" class="submit" type="button" value="登陆">
+        </form>
+        <a href="register.html"><input class="submit" type="submit" value="注册"></a><br>
+        <a href="changePassword.html"><input class="submit" type="submit" value="修改密码"></a><br>
+        <a href="changeEmail.html"><input class="submit" type="submit" value="修改邮箱"></a><br>
+    </div>
+    <!-- 遮罩层 mask -->
+
+    <div class="main">
+
+        <!-- header start -->
+        <header class="title">
+            <h1>诚信租车系统</h1>
+            <span id="log">登录/注册</span>
+        </header>
+        <!-- header start -->
+        
+        <!-- search carlist start-->
+        <div class="search">
+            <h3><i>租车地点查询</i></h3>
+            <form id="search" action="">            
+                <label for="city">取车城市</label>
+                <input id="city" type="text">
+                <label for="point">取车网点</label>
+                <input id="point" type="text">
+                <label for="get">取车日期:</label>
+                <input id="get" type="date" name="get">
+                <label for="back">还车日期:</label>
+                <input id="back" type="date" name="back">
+            </form>
+            <iframe src="carlist.html" frameborder="0" width="1000" height="360" scrolling="auto" marginheight="0" marginwidth="0"></iframe>
+        </div>
+        <!-- search carlist end-->
+        
+        <!-- orderlist check start -->
+        <div class="check">
+            <h3><i>历史订单信息</i></h3>
+            <header class="status">                
+                <a href="order2.html" target="main">待审核</a>              
+            
+                <a href="order.html" target="main">进行中</a>                
+            
+                <a href="order1.html" target="main">未通过</a>                
+            
+                <a href="order.html" target="main">已完成</a>
+            </header>
+            <iframe src="" name="main" frameborder="" width="1000" height="180" scrolling="auto" marginheight="0" marginwidth="0"></iframe>
+
+            <form action="" id="check_">
+                <label for="order_num">订单号</label>
+                <input id="order_num" type="text">
+                <label for="user">用户</label>
+                <input id="user" type="text">
+                <input type="submit" value="查询">
+            </form>
+            <iframe src="rentdetails.html" name="appoint" frameborder="0" width="1000" height="180" scrolling="auto" marginheight="0" marginwidth="0"></iframe>
+        </div>
+        <!-- orderlist check end -->
+
+        <!-- complain start -->
+        <div class="complain">
+            <h3><i>投诉反馈</i></h3>
+            <ul id="complaint" class="complaints">
+                <li>车辆使用方便，但是价格偏贵 车辆使用方便，但是价格偏贵车辆使用方便，但是价格偏贵车辆使用方便，但是价格偏贵车辆使用方便，但是价格偏贵车辆使用方便，但是价格偏贵车辆使用方便，但是价格偏贵 <span>2017-5-20 </span><span> 张三</span></li>
+                <li>取车排队时间好长啊！！！<span>2017-5-20 </span><span> 张三</span></li>
+                <li>租车价格合理，赞一个！<span>2017-5-20 </span><span> 张三</span></li>
+                <li>客服服务的很周到，提醒小贴士很贴心 <span>2017-5-20 </span><span> 张三</span></li>
+            </ul>
+        </div>
+        <!-- complain end -->
+
+        <!-- footer -->
+        <footer id="foot">
+            <p>CopyRight 2017-5-20</p>
+        </footer>
+        <!-- footer -->
+
+    </div>
+</body>
+<script src='./js/common.js'></script>
+<script src="./js/jquery-3.1.1.js"></script>
+<script>
+
+// 绑定登录点击事件
+const log = document.getElementById("log")
+log.onclick = function () {
+    const container = document.getElementById("container"),
+        mask = document.getElementById("mask"),
+        width = document.documentElement.clientWidth || document.body.clientWidth,
+        height = document.documentElement.clientHeight || document.body.clientHeight,
+        left = (width - 400) / 2,
+        top = (height - 300) / 2;
+
+    mask.style.width = width + "px";
+    mask.style.height = document.body.scrollHeight + "px";
+    mask.style.display = "block";
+
+    container.style.left = left + "px";
+    container.style.top = top + "px";
+    container.style.display = "block"
+}
+
+// 登陆界面 关闭 点击事件
+
+const close = document.getElementById("close");
+close.onclick = function () {
+    document.getElementById("container").style.display = "none";
+    document.getElementById("mask").style.display = "none";
+}
+
+// 获取取车，还车日期
+function getDate() {
+    const get = document.getElementById("get");
+    const back = document.getElementById("back");
+    console.log(get.value);
+    console.log(back.value);
+}
+
+
+var submit = $('#submitBtn')
+var $body = $('body')
+
+function callback1(res){
+    console.log('cb')
+    console.log(res)
+    if(res == 1) {
+        document.getElementById("container").style.display = "none";
+        document.getElementById("mask").style.display = "none";
+    }
+}
+
+$body.on('click', '#submitBtn', (e) => {
+    console.log(e);
+    var phoneNumber = $('#phoneNumber').val()
+    var password = $('#password').val()
+    $.ajax({
+        url: api + '/User/login',
+        type: 'GET',
+        dataType: 'jsonp',
+        jsonpCallback: "callback1", 
+        data:{
+            phoneNumber: phoneNumber,
+            password: password
+        },
+        success: function (res, callback1){
+            console.log(res)
+            callback1('asd')
+        }
+    });
+})
+
+
+</script>
+
+</html>

@@ -1,0 +1,117 @@
+/* reset start */
+* {
+	margin: 0;
+	padding: 0;
+}
+
+ul, li {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+	color: #000;
+}
+
+h3 {
+	padding: 10px 0 10px 50px;
+}
+
+/* reset end */
+body {
+	background-color: #000;
+}
+
+.main {
+	width: 1000px;
+	margin: 0 auto;
+	background-color: #ddd;
+}
+
+.title {
+	width: 1000px;
+	height: 60px;
+	line-height: 60px;
+	color: #fff;
+	background-color: #1C1C1C;
+	position: relative;
+}
+
+#log {
+	position: absolute;
+	top: 0;
+	right: 20px;
+	cursor: pointer;
+}
+
+/* search the rentable cars start */
+#search {
+	text-align: center;
+}
+
+	#search label,
+	#search input {
+	    margin: 10px 0;
+	}
+/* search the rentable cars end */
+
+/* check the order list start */
+.check .status {
+	width: 900px;
+	margin: 0 auto;
+}
+
+	.check .status a {
+		float: left;
+		width: 225px;
+		height: 40px;
+		line-height: 40px;
+		text-align: center;
+		border-top: 1px solid #e4e6e9;
+		border-bottom: 1px solid #e4e6e9;
+	}
+		.check .status a:hover {
+			background-color: #ff7433;
+		}
+
+	.check #check_ {
+		padding-left: 50px;
+	}
+		.check #check_ label,
+		.check #check_ input {
+			margin: 10px 0;
+		}
+
+/* check the order list end */
+
+/* complaints start */
+.complain {
+	width: 900px;
+	margin: 0 auto;
+	border: 1px solid black;
+}
+
+	.complain .complaints li {
+		width: 100%;
+		padding: 5px 0;
+		cursor: pointer;
+	}
+
+		.complain .complaints li:hover {
+			background-color: #CFCFCF;
+		}
+
+			.complain .complaints li > span {
+				float: right;
+			}
+
+/* complaints end */
+
+/* foot start */
+#foot {
+	width: 1000px;
+	height: 60px;
+	padding-top: 30px;
+	text-align: center;
+}
+/* foot end */

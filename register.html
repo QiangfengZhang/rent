@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>register</title>
+	<link rel="stylesheet" href="./css/change.css">
+</head>
+<body>
+	<div class="container" id="container">
+		<h2>用户注册</h2>
+		<form action="" id="login" class="items">
+			<label for="phoneNumber">账户:</label>
+			<input id="phoneNumber" type="text" name="phoneNumber" placeholder="13972023434"><br>
+			<label for="password">密码:</label>
+			<input id="password" type="password" name="password"><br>
+			<label for="email">邮箱:</label>
+			<input id="email" type="email" name="email" value=""><br>
+			<label for="idcard">证件:</label>
+			<input id="idcard" type="text" name="IDcard" placeholder="身份证号码"><br>
+			<label for="sex">性别:</label>
+			<input id="sex" type="text" name="sex" placeholder="男"><br>
+			<input id="registerBtn" class="submit" type="button" value="注册">
+		</form>
+	</div>
+</body>
+<script src='./js/common.js'></script>
+<script src="./js/jquery-3.1.1.js"></script>
+<script>
+
+function callback(res) {
+	if(res == 0) {
+
+	}
+}
+
+$('#registerBtn').on("click", function() {
+	var phoneNumber = $("#phoneNumber").val();
+	var password = $("#password").val();
+	var email = $("#email").val();
+	var idcard = $("#idcard").val();
+	var sex = $("#sex").val();
+	$.ajax({
+		url: api + "/User/register",
+		type: "GET",
+		dataType: "jsonp",
+		data: {
+			phoneNumber: phoneNumber,
+			password: password,
+			email: email,
+			idcard: idcard,
+			sex: sex,
+		},
+		success: function(res, callback) {
+			console(res)
+		}
+	})
+});
+
+</script>
+
+
+</html>

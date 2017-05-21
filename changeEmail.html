@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>change email</title>
+	<link rel="stylesheet" href="./css/change.css">
+</head>
+<body>
+	<div class="container" id="container">
+		<h2>修改邮箱地址</h2>
+		<form action="" id="changePassword" class="items">
+			<label for="phonenumber">个人账户:</label>
+			<input id="phonenumber" type="text" name="phonenumber" placeholder="手机号码"><br>
+			<label for="oldemail">旧的邮箱:</label>
+			<input id="oldemail" type="email" name="oldemail"><br>
+			<label for="newemail">新的邮箱:</label>
+			<input id="newemail" type="email" name="newemail"><br>
+			<label for="check">验证邮箱:</label>
+			<input id="check" type="email" name="check"><br>
+			<input id="change" class="submit" type="button" value="确认修改">
+		</form>
+	</div>
+</body>
+<script src='./js/common.js'></script>
+<script src="./js/jquery-3.1.1.js"></script>
+<script>
+function callback(res) {
+	if(res == 0) {
+		alert("邮箱格式错误");
+	}else if(res == 1) {
+		alert("成功");
+	}
+}
+
+$('#change').on('click', function() {
+	console.log(1)
+	var phonenumber = $("phonenumber").val();
+	var uid = $("uid").val();
+	var oldemail = $("oldemail").val();
+	var newemail = $("newemail").val();
+
+	$.ajax({
+		url: api + "/User/changeEmail",
+		type: 'GET',
+		dataType: "jsonp",
+		data: {
+			uid: phonenumber,
+			email: newemail
+		},
+		success: function(res, callback) {
+			console.log(res)
+		}
+	})
+})
+</script>
+</html>

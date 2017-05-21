@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>login</title>
+    <link rel="stylesheet" href="./css/carlist.css">
+    <link rel="stylesheet" href="./css/login.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <style>
+    </style>
+</head>
+<body>
+    <!-- 遮罩层 mask -->
+    <div id="mask"></div>
+    <div class="container" id="container">
+        <span id="close">关闭</span>
+        <h2>用户登陆</h2>
+        <form action="" id="login">
+            <label for="GET-phoneNumber">账户:</label>
+            <input id="GET-phoneNumber" type="text" name="phoneNumber" value="phoneNumber"><br>
+            <label for="GET-password">密码:</label>
+            <input id="GET-password" type="text" name="password" value="*********"><br>
+            <input class="submit" type="submit" value="登陆">
+        </form>
+        <a href="register.html"><input class="submit" type="submit" value="注册"></a><br>
+        <a href="changePassword.html"><input class="submit" type="submit" value="修改密码"></a><br>
+        <a href="changeEmail.html"><input class="submit" type="submit" value="修改邮箱"></a><br>
+    </div>
+    <div class="main">
+        <button id="log">登陆/注册</button>
+        
+        <!-- search carlist -->
+        <div class="search">
+            <h2><i>租车</i></h2>
+            <form id="search" action="">            
+                <label for="city">城市:</label>
+                <input id="city" type="text">
+                <label for="point">取车网点:</label>
+                <input id="point" type="text">
+                <label for="get">取车日期:</label>
+                <input id="get" type="date" name="get">
+                <label for="back">还车日期:</label>
+                <input id="back" type="date" name="back">
+                <input class="submit" type="submit" value="提交">
+            </form>
+            <div class="clist_ct ">
+                <table class="clist_tb" cellpadding="0" cellspacing="0" border="0">
+                    <tbody class="carList">
+                        <tr class="clist_tr">
+                            <td class="pic">
+                                <img src="./img/klz.jpg" alt="租雪佛兰科鲁兹/三厢/1.6自动" width="230" height="130">
+                            </td>
+                            <td class="info">
+                                <p class="name">雪佛兰科鲁兹</p>
+                                <p class="oth">三厢 | 1.6自动 | 乘坐5人</p>
+                            </td>
+                            <td class="ord">
+                                <div class="order_box">
+                                    <div class="pri">
+                                        <div class="pri_ye">
+                                            <em class="rental">租金:</em>
+                                            <em class="rmb">￥</em>
+                                            <em class="num">75</em>
+                                        </div>                              
+                                        <div class="pri_all">
+                                            <em class="foregift">押金:</em>
+                                            <em class="rmb">￥</em>
+                                            <em class="num">2096</em>
+                                        </div>
+                                    </div>
+                                    <a href="" id="bookOrder87" class="od_btn btn_yel" onclick="">租 车</a>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr class="clist_tr">
+                            <td class="pic">
+                                <img src="./img/ly.jpg" alt="租大众朗逸/三厢/1.6自动" width="230" height="130">
+                            </td>
+                            <td class="info">
+                                <p class="name">大众朗逸</p>
+                                <p class="oth">三厢 | 1.6自动 | 乘坐5人</p>
+                            </td>
+                            <td class="ord">
+                                <div class="order_box">
+                                    <div class="pri">
+                                        <div class="pri_ye">
+                                            <em class="rental">租金:</em>
+                                            <em class="rmb">￥</em>
+                                            <em class="num">75</em>
+                                        </div>                              
+                                        <div class="pri_all">
+                                            <em class="foregift">押金:</em>
+                                            <em class="rmb">￥</em>
+                                            <em class="num">2096</em>
+                                        </div>
+                                    </div>
+                                    <a href="" id="bookOrder87" class="od_btn btn_yel" onclick="">租 车</a>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr class="clist_tr">
+                            <td class="pic">
+                                <img src="./img/excelle.jpg" alt="租别克英朗/三厢/1.5自动" width="230" height="130">
+                            </td>
+                            <td class="info">
+                                <p class="name">别克英朗</p>
+                                <p class="oth">三厢 | 1.5自动 | 乘坐5人</p>
+                            </td>
+                            <td class="ord">
+                                <div class="order_box">
+                                    <div class="pri">
+                                        <div class="pri_ye">
+                                            <em class="rental">租金:</em>
+                                            <em class="rmb">￥</em>
+                                            <em class="num">75</em>
+                                        </div>                              
+                                        <div class="pri_all">
+                                            <em class="foregift">押金:</em>
+                                            <em class="rmb">￥</em>
+                                            <em class="num">2096</em>
+                                        </div>
+                                    </div>
+                                    <a href="" id="bookOrder87" class="od_btn btn_yel" onclick="">租 车</a>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr class="clist_tr">
+                            <td class="pic">
+                                <img src="./img/2015AKL.jpg" alt="租2016别克昂科拉/SUV/1.4T自动" width="230" height="130">
+                            </td>
+                            <td class="info">
+                                <p class="name">2016别克昂科拉</p>
+                                <p class="oth">SUV | 1.4T自动 | 乘坐5人</p>
+                            </td>
+                            <td class="ord">
+                                <div class="order_box">
+                                    <div class="pri">
+                                        <div class="pri_ye">
+                                            <em class="rental">租金:</em>
+                                            <em class="rmb">￥</em>
+                                            <em class="num">75</em>
+                                        </div>                              
+                                        <div class="pri_all">
+                                            <em class="foregift">押金:</em>
+                                            <em class="rmb">￥</em>
+                                            <em class="num">2096</em>
+                                        </div>
+                                    </div>
+                                    <a href="" id="bookOrder87" class="od_btn btn_yel" onclick="">租 车</a>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr class="clist_tr">
+                            <td class="pic">
+                                <img src="./img/k5.jpg" alt="租起亚K5/三厢/2.0自动" width="230" height="130">
+                            </td>
+                            <td class="info">
+                                <p class="name">起亚K5</p>
+                                <p class="oth">三厢 | 2.0自动 | 乘坐5人</p>
+                            </td>
+                            <td class="ord">
+                                <div class="order_box">
+                                    <div class="pri">
+                                        <div class="pri_ye">
+                                            <em class="rental">租金:</em>
+                                            <em class="rmb">￥</em>
+                                            <em class="num">75</em>
+                                        </div>                              
+                                        <div class="pri_all">
+                                            <em class="foregift">押金:</em>
+                                            <em class="rmb">￥</em>
+                                            <em class="num">2096</em>
+                                        </div>
+                                    </div>
+                                    <a href="" id="bookOrder87" class="od_btn btn_yel" onclick="">租 车</a>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr class="clist_tr">
+                            <td class="pic">
+                                <img src="./img/past18.jpg" alt="租大众帕萨特/三厢/1.8T自动" width="230" height="130">
+                            </td>
+                            <td class="info">
+                                <p class="name">大众帕萨特</p>
+                                <p class="oth">三厢 | 1.8T自动 | 乘坐5人</p>
+                            </td>
+                            <td class="ord">
+                                <div class="order_box">
+                                    <div class="pri">
+                                        <div class="pri_ye">
+                                            <em class="rental">租金:</em>
+                                            <em class="rmb">￥</em>
+                                            <em class="num">75</em>
+                                        </div>                              
+                                        <div class="pri_all">
+                                            <em class="foregift">押金:</em>
+                                            <em class="rmb">￥</em>
+                                            <em class="num">2096</em>
+                                        </div>
+                                    </div>
+                                    <a href="" id="bookOrder87" class="od_btn btn_yel" onclick="">租 车</a>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr class="clist_tr">
+                            <td class="pic">
+                                <img src="./img/newjy.jpg" alt="租别克新君越/三厢/2.4自动" width="230" height="130">
+                            </td>
+                            <td class="info">
+                                <p class="name">别克新君越</p>
+                                <p class="oth">三厢 | 2.4自动 | 乘坐5人</p>
+                            </td>
+                            <td class="ord">
+                                <div class="order_box">
+                                    <div class="pri">
+                                        <div class="pri_ye">
+                                            <em class="rental">租金:</em>
+                                            <em class="rmb">￥</em>
+                                            <em class="num">75</em>
+                                        </div>                              
+                                        <div class="pri_all">
+                                            <em class="foregift">押金:</em>
+                                            <em class="rmb">￥</em>
+                                            <em class="num">2096</em>
+                                        </div>
+                                    </div>
+                                    <a href="" id="bookOrder87" class="od_btn btn_yel" onclick="">租 车</a>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr class="clist_tr">
+                            <td class="pic">
+                                <img src="./img/Tiguan.jpg" alt="租大众途观/SUV/1.8T自动" width="230" height="130">
+                            </td>
+                            <td class="info">
+                                <p class="name">大众途观</p>
+                                <p class="oth">SUV | 1.8T自动 | 乘坐5人</p>
+                            </td>
+                            <td class="ord">
+                                <div class="order_box">
+                                    <div class="pri">
+                                        <div class="pri_ye">
+                                            <em class="rental">租金:</em>
+                                            <em class="rmb">￥</em>
+                                            <em class="num">75</em>
+                                        </div>                              
+                                        <div class="pri_all">
+                                            <em class="foregift">押金:</em>
+                                            <em class="rmb">￥</em>
+                                            <em class="num">2096</em>
+                                        </div>
+                                    </div>
+                                    <a href="" id="bookOrder87" class="od_btn btn_yel" onclick="">租 车</a>
+                                </div>
+                            </td>
+                        </tr>
+                        
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+// 绑定登录点击事件
+var log = document.getElementById("log")
+log.onclick = function () {
+    var container = document.getElementById("container"),
+        mask = document.getElementById("mask"),
+        width = document.documentElement.clientWidth || document.body.clientWidth,
+        height = document.documentElement.clientHeight || document.body.clientHeight,
+        left = (width - 400) / 2,
+        top = (height - 300) / 2;
+
+    mask.style.width = width + "px";
+    mask.style.height = document.body.scrollHeight + "px";
+    mask.style.display = "block";
+
+    container.style.left = left + "px";
+    container.style.top = top + "px";
+    container.style.display = "block"
+}
+
+// 登陆界面 关闭 点击事件
+var close = document.getElementById("close");
+close.onclick = function () {
+    document.getElementById("container").style.display = "none";
+    document.getElementById("mask").style.display = "none";
+}
+
+
+
+</script>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>login</title>
+	<style>
+	.container {
+		width: 400px;
+		height: 300px;
+		margin: 0 auto;
+		border: 1px solid black;
+		background-color: #F5F5DC;
+		text-align: center;
+		display: none;
+		position: absolute;
+		left: 200px;
+		top: 100px;
+		z-index: 100;
+	}
+
+	#login label,
+	#login input {
+		margin: 10px 0;
+	}
+
+	.submit {
+		width: 212px;
+		margin-bottom: 10px;
+	}
+	</style>
+</head>
+<body>
+	
+	<div class="container" id="container">
+		<h2>用户登陆</h2>
+		<form action="" id="login">
+			<label for="GET-phoneNumber">账户:</label>
+			<input id="GET-phoneNumber" type="text" name="phoneNumber" placeholder="13972029081"><br>
+			<label for="GET-password">密码:</label>
+			<input id="GET-password" type="password" name="password" value="123456"><br>
+			<input class="submit" type="button" value="登陆">
+		</form>
+		<a href="register.html"><input class="submit" type="submit" value="注册"></a><br>
+		<a href="changePassword.html"><input class="submit" type="submit" value="修改密码"></a><br>
+		<a href="changeEmail.html"><input class="submit" type="submit" value="修改邮箱"></a><br>
+	</div>
+
+	<p id="log">登陆/注册</p>
+
+</body>
+<script src='./js/common.js'></script>
+<script src='./js/jquery-3.1.1.js'></script>
+<script>
+// 绑定登录点击事件
+var log = document.getElementById("log")
+log.onclick = function () {
+	console.log(api)
+
+	// var container = document.getElementById("container")
+	// if(container.style.display == "block") {
+	// 	container.style.display = "none";
+	// }else {
+	// 	container.style.display = "block"
+	// }
+}
+
+
+
+</script>
+</html>
