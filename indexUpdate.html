@@ -34,11 +34,11 @@
             <span id="log">登录/注册</span>
         </header>
         <!-- header start -->
-        
+
         <!-- search carlist start-->
         <div class="search">
             <h3><i>租车地点查询</i></h3>
-            <form id="search" action="">            
+            <form id="search" action="">
                 <label for="city">取车城市</label>
                 <input id="city" type="text">
                 <label for="point">取车网点</label>
@@ -51,17 +51,17 @@
             <iframe src="carlist.html" frameborder="0" width="1000" height="360" scrolling="auto" marginheight="0" marginwidth="0"></iframe>
         </div>
         <!-- search carlist end-->
-        
+
         <!-- orderlist check start -->
         <div class="check">
             <h3><i>历史订单信息</i></h3>
-            <header class="status">                
-                <a href="order2.html" target="main">待审核</a>              
-            
-                <a href="order.html" target="main">进行中</a>                
-            
-                <a href="order1.html" target="main">未通过</a>                
-            
+            <header class="status">
+                <a href="order2.html" target="main">待审核</a>
+
+                <a href="order.html" target="main">进行中</a>
+
+                <a href="order1.html" target="main">未通过</a>
+
                 <a href="order.html" target="main">已完成</a>
             </header>
             <iframe src="" name="main" frameborder="" width="1000" height="180" scrolling="auto" marginheight="0" marginwidth="0"></iframe>
@@ -97,8 +97,8 @@
 
     </div>
 </body>
-<script src='./js/common.js'></script>
 <script src="./js/jquery-3.1.1.js"></script>
+<script src='./js/common.js'></script>
 <script>
 
 // 绑定登录点击事件
@@ -141,7 +141,6 @@ var submit = $('#submitBtn')
 var $body = $('body')
 
 function callback1(res){
-    console.log('cb')
     console.log(res)
     if(res == 1) {
         document.getElementById("container").style.display = "none";
@@ -153,21 +152,14 @@ $body.on('click', '#submitBtn', (e) => {
     console.log(e);
     var phoneNumber = $('#phoneNumber').val()
     var password = $('#password').val()
-    $.ajax({
-        url: api + '/User/login',
-        type: 'GET',
-        dataType: 'jsonp',
-        jsonpCallback: "callback1", 
-        data:{
-            phoneNumber: phoneNumber,
-            password: password
-        },
-        success: function (res, callback1){
-            console.log(res)
-            callback1('asd')
-        }
-    });
+    var params = {
+        phoneNumber: phoneNumber,
+        password: password
+    }
+    var url = '/User/login';
+    get(url, params, 'callback1');
 })
+
 
 
 </script>
